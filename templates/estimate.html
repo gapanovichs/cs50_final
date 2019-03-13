@@ -1,0 +1,221 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Estimate
+{% endblock %}
+
+{% block main %}
+
+
+<h1 class="display-6 text-center">PRICE CALCULATOR:</h1>
+&nbsp;
+    <div class="container-fluid" style="max-width:1200px">
+        <div class="row">
+            <div class="col-sm">
+                <label style="text-center">BATTERIES:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="rb" id="rb" value="10">
+                        <label class="form-check-label" for="rb">
+                            Regular Battery
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" style="vertical-align: middle" type="checkbox" name="lbat" id="lbat" value="12">
+                        <label class="form-check-label" for="lbat">
+                            Lithium Battery
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="bc" id="bc" value="45">
+                        <label class="form-check-label" for="bc">
+                            Battery Capacitor
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="wt" id="wt" value="40">
+                        <label class="form-check-label" for="wt">
+                            Water Resistance
+                        </label>
+                    </div>
+            </div>
+            <div class="col-sm">
+                <label style="text-center">CRYSTALS:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="min" id="min" value="25">
+                        <label class="form-check-label" for="min">
+                            Mineral
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" style="vertical-align: middle" type="checkbox" name="mins" id="mins" value="35">
+                        <label class="form-check-label" for="mins">
+                            Special Mineral
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="pl" id="pl" value="45">
+                        <label class="form-check-label" for="pl">
+                            Plastic
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="pls" id="pls" value="65">
+                        <label class="form-check-label" for="pls">
+                            Special Plastic
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="sap" id="sap" value="85">
+                        <label class="form-check-label" for="sap">
+                            Sapphire
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="saps" id="saps" value="110">
+                        <label class="form-check-label" for="saps">
+                            Special Sapphire
+                        </label>
+                    </div>
+            </div>
+            <div class="col-sm">
+                <label style="text-center">BAND/BRACELET:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="lb" id="lb" value="25">
+                        <label class="form-check-label" for="lb">
+                            Leather Band
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" style="vertical-align: middle" type="checkbox" name="prlb" id="prlb" value="75">
+                        <label class="form-check-label" for="prlb">
+                            Premium Leather Band
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="rub" id="rub" value="25">
+                        <label class="form-check-label" for="rub">
+                            Rubber/Silicone Band
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="ny" id="ny" value="20">
+                        <label class="form-check-label" for="ny">
+                            Nylon Band
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="bra" id="bra" value="30">
+                        <label class="form-check-label" for="bra">
+                            Bracelet
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="prbra" id="prbra" value="60">
+                        <label class="form-check-label" for="prbra">
+                            Premium Bracelet
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="link" id="link" disabled>
+                        <label class="form-check-label" for="link">
+                            Link/Clasp (Manager Approval Is Needed)
+                        </label>
+                    </div>
+                </div>
+            <div class="col-sm">
+                <label style="text-center">PARTS:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="crown" id="crown" value="25">
+                        <label class="form-check-label" for="crown">
+                            Crown
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" style="vertical-align: middle" type="checkbox" name="prcrown" id="prcrown" value="55">
+                        <label class="form-check-label" for="prcrown">
+                            Premium Crown
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="hand" id="hand" value="20">
+                        <label class="form-check-label" for="hand">
+                            Hand
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="hands" id="hands" value="50">
+                        <label class="form-check-label" for="hands">
+                            Set Of Hands
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="marker" id="marker" value="15">
+                        <label class="form-check-label" for="marker">
+                            Marker
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="bezel" id="bezel" disabled>
+                        <label class="form-check-label" for="bezel">
+                            Bezel (Manager Approval Is Needed)
+                        </label>
+                    </div>
+                </div>
+            <div class="col-sm">
+                <label style="text-center">SERVICES:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="clean" id="clean" value="20">
+                        <label class="form-check-label" for="clean">
+                            Clean
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" style="vertical-align: middle" type="checkbox" name="refcase" id="refcase" value="65">
+                        <label class="form-check-label" for="refcase">
+                            Refinish Case
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="refbra" id="refbra" value="85">
+                        <label class="form-check-label" for="refbra">
+                            Refinish Bracelet
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" style="vertical-align: middle" name="ship" id="ship" disabled>
+                        <label class="form-check-label" for="ship">
+                            Shipping (Manager Approval Is Needed)
+                        </label>
+                    </div>
+            </div>
+            <div class="col-sm">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Reminder</h5>
+                        <p class="card-text">If you have any questions or concerns during this process, please, address them to your manager.<br>
+                                             DO NOT GIVE ANY ESTIMATES if you are not 100% sure the price is correct.<br>
+                                             If there is a difficult situation and no manager around, let customer know,
+                                             that we will give estimate later over the phone<br>
+                                             *remember <strong>Edit</strong> price for that order later*</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    &nbsp;
+    <div class="text-center">
+        <span><font size="6">TOTAL:</span>
+        <span id="total"></span></font>
+    </div><br>
+    <div class="text-center">
+        <table align="center">
+            <tr>
+                <td><a href="/estimate" class="btn-secondary btn-lg text-center">Start Over</a></td>
+                <td><a onclick="return estimate()" class="btn-info btn-lg text-center">ESTIMATE</a></td>
+                <td><a href="/register" class="btn-success btn-lg text-center">Go to Register</a></td>
+            </tr>
+        </table>
+    </div>
+
+{% endblock %}

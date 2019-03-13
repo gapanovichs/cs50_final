@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Order Is Registered
+{% endblock %}
+
+{% block main %}
+
+
+<form action="/registered" method="post">
+<div class="alert alert-success text-center" role="alert">
+  You Have Registered New Order
+</div>
+&nbsp;
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th scope="col">Order Number</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Watch Brand</th>
+      <th scope="col">Serial Number</th>
+      <th scope="col">Services</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ order }}</td>
+      <td>{{ first }}</td>
+      <td>{{ last }}</td>
+      <td>{{ phone }}</td>
+      <td>{{ brand }}</td>
+      <td>{{ serial }}</td>
+      <td>{{ services }}</td>
+      <td>${{ price }}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+{% endblock %}

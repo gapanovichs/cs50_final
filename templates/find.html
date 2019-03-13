@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Find Order
+{% endblock %}
+
+{% block main %}
+
+<form action="/find" method="post">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Find by Order Number:</label>
+                <input autocomplete="off" autofocus class="form-control" name="order" id="order" placeholder="Enter Order Number" type="text"/>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Find by Last Name:</label>
+                <input  class="form-control" name="last" id="last" placeholder="Enter Last Name" type="text"/>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Find by Phone Number:</label>
+                <input class="form-control" name="phone" id="phone" placeholder="Enter Phone Number" type="text"/>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="form-group">
+                <label>Find by Date In:</label>
+                <input class="form-control" name="d_in" id="d_in" type="date"/>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="text-center">
+        <button type="submit" onclick="return find()" class="btn btn-success btn-lg text-center">FIND ORDER</button>
+    </div>
+</form>
+
+
+
+{% endblock %}

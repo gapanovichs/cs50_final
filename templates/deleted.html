@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Deleted
+{% endblock %}
+
+{% block main %}
+
+
+<form action="/found" method="post">
+<div class="alert alert-success text-center" role="alert">
+  Order Has Been Deleted
+</div>
+<div class="alert alert-danger text-center" role="alert">
+  You Can Not Reverse This Action
+</div>
+
+{% endblock %}

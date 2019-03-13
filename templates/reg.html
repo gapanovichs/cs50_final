@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Reg
+{% endblock %}
+
+{% block main %}
+
+<form action="/reg" method="post">
+&nbsp;
+    <div class="container-fluid" style="max-width:250px">
+            <div class="form-group col-mid-4 text-center">
+                <label class="text-secondary">Username:</label>
+                <input autocomplete="off" autofocus class="form-control" name="username" id="username" placeholder="Enter Username" type="text" required/>
+            </div>
+            <div class="form-group col-mid-4 text-center">
+                <label class="text-secondary">Password:</label>
+                <input autocomplete="off" class="form-control" name="password" id="password" placeholder="Enter Password" type="password" required/>
+            </div>
+            <div class="form-group col-mid-4 text-center">
+                <label class="text-secondary">Confirm Password:</label>
+                <input autocomplete="off" class="form-control" name="confirm" id="confirm" placeholder="Enter Password One More Time" type="password" required/>
+            </div>
+            &nbsp;
+        </div>
+        &nbsp;
+
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-secondary btn-lg text-center" onclick="return reg()">REGISTER</button>
+    </div>
+</form>
+
+<script>
+    function reg(){
+        if (document.getElementById("password").value != document.getElementById("confirm").value){
+            alert("passwords are not the same!");
+            return false;
+        }
+    }
+
+
+
+</script>
+
+
+{% endblock %}

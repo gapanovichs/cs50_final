@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Order(s) Is Found
+{% endblock %}
+
+{% block main %}
+
+
+<form action="/found" method="post">
+  <div class="alert alert-success text-center" role="alert">
+    Order(s) Found:
+  </div>
+  &nbsp;
+  <table class="table text-center" id="aaa">
+    <thead>
+      <tr>
+        <th scope="col">Order Number</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Watch Brand</th>
+        <th scope="col">Serial Number</th>
+        <th scope="col">Services</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date In</th>
+        <th scope="col">Date Out</th>
+        <th scope="col">Status</th>
+        <th scope="col">Return</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+          <tr>
+            <td>{{ order.order_num }}</td>
+            <td>{{ order.first }}</td>
+            <td>{{ order.last }}</td>
+            <td>{{ order.phone }}</td>
+            <td>{{ order.brand }}</td>
+            <td>{{ order.serial }}</td>
+            <td>{{ order.services }}</td>
+            <td>${{ order.price }}</td>
+            <td>{{ order.d_in }}</td>
+            <td>{{ order.out }}</td>
+            <td>{{ order.status }}</td>
+            <td><button name="button" id="button" type="submit" class="btn btn-primary" value="{{ order.id }}">Return</button></td>
+            <td><button name="button1" id="button1" type="submit" class="btn btn-warning" value="{{ order.id }}">Edit</button></td>
+            <td><button name="button2" id="button2" type="submit" class="btn btn-danger" value="{{ order.id }}">Delete</button></td>
+          </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+
+
+<input class="form-control" name="result" id="result" hidden/>
+<input class="form-control" name="resulte" id="resulte" hidden/>
+<input class="form-control" name="resultd" id="resultd" hidden/>
+</form>
+
+
+
+<script>
+
+
+function myMain() {
+  document.getElementById("aaa").onclick = buton;
+
+
+    function buton(e) {
+      if (e.target.id == 'button') {
+        var a;
+        a = confirm("Are you sure you want to RETURN this order?");
+        if (a == false) {
+            return false;
+        }
+        let x;
+        x = e.target.value;
+        document.getElementById("result").value = x;
+      }
+      else if (e.target.id == 'button1') {
+        var b;
+        b = confirm("Are you sure you want to EDIT this order?");
+        if (b == false) {
+            return false;
+        }
+        let y;
+        y = e.target.value;
+        document.getElementById("resulte").value = y;
+      }
+      else if (e.target.id == 'button2') {
+        alert("THIS ACTION IS IRREVERSIBLE!");
+        var c;
+        c = confirm("Are you sure you want to DELETE this order?");
+        if (c == false) {
+            return false;
+        }
+        let z;
+        z = e.target.value;
+        document.getElementById("resultd").value = z;
+      }
+    }
+}
+
+
+window.onload = myMain;
+
+</script>
+
+{% endblock %}

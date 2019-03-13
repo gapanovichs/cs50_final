@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recent Orders
+{% endblock %}
+
+{% block main %}
+
+
+<form action="/recent" method="get">
+<h1 class="display-6 text-center">RECENT ORDERS:</h1>
+&nbsp;
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th scope="col">Order Number</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Watch Brand</th>
+      <th scope="col">Serial Number</th>
+      <th scope="col">Services</th>
+      <th scope="col">Price</th>
+      <th scope="col">Date In</th>
+      <th scope="col">Date Out</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in orders %}
+        <tr>
+          <td>{{ order.order_num }}</td>
+          <td>{{ order.first }}</td>
+          <td>{{ order.last }}</td>
+          <td>{{ order.phone }}</td>
+          <td>{{ order.brand }}</td>
+          <td>{{ order.serial }}</td>
+          <td>{{ order.services }}</td>
+          <td>${{ order.price }}</td>
+          <td>{{ order.d_in }}</td>
+          <td>{{ order.out }}</td>
+          <td>{{ order.status }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
