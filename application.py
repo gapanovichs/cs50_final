@@ -14,12 +14,11 @@ from functools import wraps
 app = Flask(__name__)
 
 # setting a database
-db = SQL(os.environ.get("DATABASE_URL"))
+db = SQL(postgres://wbthwlgcxbffzw:3dfee9aa463045549c81c1c1d4fbac87afba40e4470188277fccbdabbe0a3d17@ec2-54-235-86-101.compute-1.amazonaws.com:5432/dal6njurv136kd)
 
 # for dates for db
 now = date.today()
 
-# ! ! ! ! ! ! ! ! !! ! ! ! ! ! ! ! ! ! !! ! ! ! ! ! ! ! ! ! !! ! ! ! ! ! ! ! ! ! !! ! ! ! ! ! ! ! ! ! !! !
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
