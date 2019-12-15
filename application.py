@@ -14,7 +14,7 @@ from functools import wraps
 app = Flask(__name__)
 
 # setting a database
-db = SQL(db = SQL(os.environ.get("DATABASE_URL"))
+db = SQL(os.environ.get("DATABASE_URL"))
 
 # for dates for db
 now = date.today()
