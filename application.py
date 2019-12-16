@@ -45,7 +45,6 @@ def login_required(f):
     return decorated_function
 
 
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
