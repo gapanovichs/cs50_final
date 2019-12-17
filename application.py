@@ -357,8 +357,6 @@ def dateformat(rows):
         else:
             row["out"] = out[5:7] + "/" + out[8:] + "/" +  out[2:4]
 
-
-
         i += 1
     return rows
 
