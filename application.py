@@ -15,6 +15,7 @@ app = Flask(__name__)
 
 # setting a database
 db = SQL(os.environ.get("DATABASE_URL"))
+db.connect()
 
 # for dates for db
 now = date.today()
