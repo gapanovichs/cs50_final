@@ -8,16 +8,13 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions
 from werkzeug.security import check_password_hash, generate_password_hash
 from functools import wraps
-from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
 
 
 # app for Flask
 app = Flask(__name__)
 
 # setting a database
-engine = create_engine(postgres://wbthwlgcxbffzw:3dfee9aa463045549c81c1c1d4fbac87afba40e4470188277fccbdabbe0a3d17@ec2-54-235-86-101.compute-1.amazonaws.com:5432/dal6njurv136kd, echo=False)
-db = scoped_session(sessionmaker(bind=engine))
+db = SQL(os.environ.get("DATABASE_URL"))
 
 # for dates for db
 now = date.today()
@@ -359,6 +356,7 @@ def dateformat(rows):
             row["out"] = ""
         else:
             row["out"] = out[5:7] + "/" + out[8:] + "/" +  out[2:4]
+
 
         i += 1
     return rows
