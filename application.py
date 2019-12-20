@@ -8,14 +8,16 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions
 from werkzeug.security import check_password_hash, generate_password_hash
 from functools import wraps
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
 
 
 # app for Flask
 app = Flask(__name__)
 
 # setting a database
-db = SQL(os.environ.get("DATABASE_URL"))
-db.connect()
+engine = create_engine("DATABASE_URL", echo=False)
+db = scoped_session(sessionmaker(bind=engine))
 
 # for dates for db
 now = date.today()
