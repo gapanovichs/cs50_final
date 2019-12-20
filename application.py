@@ -16,7 +16,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 app = Flask(__name__)
 
 # setting a database
-engine = create_engine("DATABASE_URL", echo=False)
+engine = create_engine(postgres://wbthwlgcxbffzw:3dfee9aa463045549c81c1c1d4fbac87afba40e4470188277fccbdabbe0a3d17@ec2-54-235-86-101.compute-1.amazonaws.com:5432/dal6njurv136kd, echo=False)
 db = scoped_session(sessionmaker(bind=engine))
 
 # for dates for db
